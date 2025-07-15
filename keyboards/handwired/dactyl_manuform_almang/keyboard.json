@@ -7,9 +7,15 @@
         "pid": "0x3536",
         "device_version": "1.0.0"
     },
+    "host": {
+        "default": {
+            "nkro": true
+        }
+    },
     "processor": "RP2040",
     "bootloader": "rp2040",
     "board": "GENERIC_RP_RP2040",
+    "development_board": "pi_pico",
     "features": {
         "bootmagic": true,
         "extrakey": true,
@@ -34,13 +40,15 @@
             "protocol": "serial"
         }
     },
-    "matrix": {
-        "rows": 6,
-        "cols": 6,
-        "row_pins": ["GP16", "GP17", "GP18", "GP19", "GP20", "GP21"],
-        "col_pins": ["GP10", "GP11", "GP12", "GP13", "GP14", "GP15"],
-        "diode_direction": "COL2ROW"
+    "matrix_pins": {
+        "rows": ["GP16", "GP17", "GP18", "GP19", "GP20", "GP21"],
+        "cols": ["GP10", "GP11", "GP12", "GP13", "GP14", "GP15"]
     },
+    "matrix_size": {
+        "rows": 6,
+        "cols": 6
+    },
+    "diode_direction": "COL2ROW",
     "ws2812": {
         "pin": "GP7",
         "driver": "vendor"
