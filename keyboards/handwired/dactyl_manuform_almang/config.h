@@ -3,100 +3,85 @@
  * Features: OLED, dual encoders, RGB underglow, split keyboard
  */
 
-#pragma once
+ #pragma once
 
-// Basic keyboard configuration
-#define VENDOR_ID       0xCUST
-#define PRODUCT_ID      0x0001
-#define DEVICE_VER      0x0001
-#define MANUFACTURER    Custom
-#define PRODUCT         Dactyl Manuform 5x6 Pi Pico
+ // RP2040-specific settings
+ #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+ #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 200U
+ #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED_MASK 0U
 
-// Matrix configuration
-#define MATRIX_ROWS 12
-#define MATRIX_COLS 6
+ // OLED Display Configuration
+ #ifdef OLED_ENABLE
+     #define OLED_DISPLAY_128X32
+     #define OLED_TIMEOUT 30000
+     #define OLED_BRIGHTNESS 128
+     #define OLED_UPDATE_INTERVAL 50
+ #endif
 
-// Split keyboard configuration
-#define SPLIT_HAND_PIN GP22
-#define SERIAL_USART_FULL_DUPLEX
-#define SERIAL_USART_TX_PIN GP1
-#define SERIAL_USART_RX_PIN GP0
-#define SPLIT_TRANSACTION_IDS_KB \
-    RPC_ID_KB_CONFIG_SYNC
+ // Split keyboard configuration
+ #ifdef SPLIT_KEYBOARD
+     #define SPLIT_HAND_PIN GP22
+     #define SPLIT_HAND_PIN_LOW_IS_LEFT
+     #define SERIAL_USART_FULL_DUPLEX
+     #define SERIAL_USART_TX_PIN GP0
+     #define SERIAL_USART_RX_PIN GP1
+     #define SERIAL_USART_PIN_SWAP
+     #define SPLIT_LAYER_STATE_ENABLE
+     #define SPLIT_LED_STATE_ENABLE
+     #define SPLIT_MODS_ENABLE
+     #define SPLIT_OLED_ENABLE
+     #define SPLIT_TRANSPORT_MIRROR
+ #endif
 
-// OLED Configuration
-#ifdef OLED_ENABLE
-    #define OLED_DISPLAY_128X32
-    #define OLED_BRIGHTNESS 128
-    #define OLED_TIMEOUT 30000
-    #define OLED_SCROLL_TIMEOUT 0
-    #define I2C_DRIVER I2CD1
-    #define I2C1_SDA_PIN GP8
-    #define I2C1_SCL_PIN GP9
-    #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
-#endif
+ // Encoder configuration
+ #ifdef ENCODER_ENABLE
+     #define ENCODER_RESOLUTION 4
+     #define ENCODER_DEFAULT_POS 0x3
+ #endif
 
-// Encoder configuration
-#ifdef ENCODER_ENABLE
-    #define ENCODERS_PAD_A { GP4, GP2 }
-    #define ENCODERS_PAD_B { GP5, GP3 }
-    #define ENCODER_RESOLUTION 4
-    #define ENCODER_MAP_ENABLE
-    #define SPLIT_ENCODER_MIRROR
-#endif
+ // RGB Matrix Configuration
+ #ifdef RGB_MATRIX_ENABLE
+     #define RGB_MATRIX_LED_COUNT 16
+     #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
+     #define RGB_MATRIX_DEFAULT_HUE 0
+     #define RGB_MATRIX_DEFAULT_SAT 255
+     #define RGB_MATRIX_DEFAULT_VAL 128
+     #define RGB_MATRIX_DEFAULT_SPD 127
+     #define RGB_MATRIX_SLEEP
+     #define RGB_MATRIX_TIMEOUT 300000
+     #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+     #define RGB_MATRIX_KEYPRESSES
+     #define RGB_MATRIX_KEYRELEASES
+ #endif
 
-// RGB Light configuration
-#ifdef RGBLIGHT_ENABLE
-    #define RGB_DI_PIN GP7
-    #define RGBLED_NUM 16
-    #define RGBLED_SPLIT { 8, 8 }
-    #define RGBLIGHT_LIMIT_VAL 120
-    #define RGBLIGHT_SLEEP
-    #define RGBLIGHT_SPLIT
-    #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL
+ // Timing and debounce settings
+ #define DEBOUNCE 5
+ #define MATRIX_IO_DELAY 30
+ #define TAP_CODE_DELAY 10
 
-    // RGB Animations
-    #define RGBLIGHT_EFFECT_BREATHING
-    #define RGBLIGHT_EFFECT_RAINBOW_MOOD
-    #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-    #define RGBLIGHT_EFFECT_SNAKE
-    #define RGBLIGHT_EFFECT_KNIGHT
-    #define RGBLIGHT_EFFECT_CHRISTMAS
-    #define RGBLIGHT_EFFECT_STATIC_GRADIENT
-    #define RGBLIGHT_EFFECT_RGB_TEST
-    #define RGBLIGHT_EFFECT_ALTERNATING
-    #define RGBLIGHT_EFFECT_TWINKLE
-#endif
+ // USB power management
+ #define USB_SUSPEND_WAKEUP_DELAY 0
 
-// Debounce configuration
-#define DEBOUNCE 5
+ // Performance optimizations
+ #define FORCE_NKRO
+ #define QMK_KEYS_PER_SCAN 4
 
-// USB Configuration
-#define USB_POLLING_INTERVAL_MS 1
-#define QMK_KEYS_PER_SCAN 4
+ // Feature configurations
+ #define MOUSEKEY_INTERVAL 16
+ #define MOUSEKEY_DELAY 0
+ #define MOUSEKEY_TIME_TO_MAX 60
+ #define MOUSEKEY_MAX_SPEED 7
+ #define MOUSEKEY_WHEEL_DELAY 0
 
-// Memory optimization
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
+ // Unicode support
+ #define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX
 
-// Additional features
-#define MOUSEKEY_ENABLE
-#define EXTRAKEY_ENABLE
-#define NKRO_ENABLE
+ // Bootmagic configuration
+ #define BOOTMAGIC_LITE_ROW 0
+ #define BOOTMAGIC_LITE_COLUMN 0
 
-// Tap-hold configuration
-#define TAPPING_TERM 200
-#define TAPPING_TERM_PER_KEY
-#define PERMISSIVE_HOLD
-#define IGNORE_MOD_TAP_INTERRUPT
-
-// Power management
-#define SPLIT_WATCHDOG_ENABLE
-#define SPLIT_WATCHDOG_TIMEOUT 3000
-
-// Layer switching
-#define LAYER_STATE_8BIT
-
-// Custom user configurations
-#define CUSTOM_OLED_DRIVER
-#define CUSTOM_ENCODER_CALLBACK
+ // Tapping term
+ #define TAPPING_TERM 200
+ #define TAPPING_TERM_PER_KEY
+ #define PERMISSIVE_HOLD
+ #define HOLD_ON_OTHER_KEY_PRESS
