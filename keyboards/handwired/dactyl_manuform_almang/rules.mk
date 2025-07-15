@@ -1,0 +1,5 @@
+# Build options
+ENCODER_ENABLE = yes
+OLED_ENABLE = yes
+RGBLIGHT_ENABLE = yes
+SPLIT_KEYBOARD = yes
