@@ -1,6 +1,6 @@
 # Custom Dactyl Manuform 5x6 Pi Pico
 
-A custom Dactyl Manuform 5x6 keyboard featuring a Raspberry Pi Pico microcontroller with advanced features including dual encoders, OLED display, and RGB underglow. The case is generated using wynklebuild dactyl-manuform generator.
+A custom Dactyl Manuform 5x6 keyboard featuring a Raspberry Pi Pico microcontroller with advanced features including dual encoders, OLED display, and RGB underglow. The case is generated using [bullwinkle3000's dactyl-manuform generator](https://github.com/bullwinkle3000/dactyl-keyboard/tree/master).
 
 * Keyboard Maintainer: [almang45](https://github.com/almang45)
 * Hardware Supported: Raspberry Pi Pico and other RP2040
