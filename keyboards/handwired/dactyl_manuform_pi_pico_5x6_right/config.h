@@ -17,3 +17,4 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #define WS2812_DI_PIN GP7
 #define RGBLIGHT_LED_COUNT 16
 #define RGBLIGHT_LIMIT_VAL 155
+#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
