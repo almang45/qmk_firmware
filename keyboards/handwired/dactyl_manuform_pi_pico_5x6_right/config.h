@@ -9,8 +9,8 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 // Encoder 1 is EC11 for volume control
 // Encoder 2 is Mouse Wheel for scrolling
-#define ENCODERS_PAD_A { GP4, GP2 }
-#define ENCODERS_PAD_B { GP5, GP3 }
+#define ENCODER_A_PINS { GP4, GP2 }
+#define ENCODER_B_PINS { GP5, GP3 }
 
 #define ENCODER_RESOLUTION 4
 
