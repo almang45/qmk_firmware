@@ -29,9 +29,7 @@
     "rgblight": {
         "led_count": 16,
         "animations": {
-            "breathing": true,
-            "rainbow_mood": true,
-            "snake": false
+            "rainbow_swirl": true
         }
     },
     "encoder": {
