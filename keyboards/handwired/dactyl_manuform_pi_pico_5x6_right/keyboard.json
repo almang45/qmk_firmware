@@ -14,7 +14,7 @@
     },
     "diode_direction": "COL2ROW",
     "matrix_pins": {
-        "cols": ["GP10", "GP11", "GP12", "GP13", "GP14", "GP15"],
+        "cols": ["GP23", "GP29", "GP28", "GP27", "GP26", "GP22"],
         "rows": ["GP21", "GP20", "GP19", "GP18", "GP17"]
     },
     "usb": {
