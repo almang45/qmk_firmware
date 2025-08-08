@@ -9,8 +9,8 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 // Encoder 1 is EC11 for volume control
 // Encoder 2 is Mouse Wheel for scrolling
-#define ENCODER_A_PINS { GP4, GP2 }
-#define ENCODER_B_PINS { GP5, GP3 }
+#define ENCODER_A_PINS { GP2, GP4 }
+#define ENCODER_B_PINS { GP3, GP5 }
 #define ENCODER_RESOLUTION 4
 
 #define I2C1_SCL_PIN GP9
@@ -20,11 +20,11 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #define WS2812_DI_PIN GP7
 #define RGBLIGHT_LED_COUNT 16
 #define RGBLIGHT_LIMIT_VAL 155
-#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-#define RGBLIGHT_EFFECT_BREATHING
-#define RGBLIGHT_EFFECT_KNIGHT
-#define RGBLIGHT_EFFECT_SNAKE
-#define RGBLIGHT_EFFECT_TWINKLE
+// #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+// #define RGBLIGHT_EFFECT_BREATHING
+// #define RGBLIGHT_EFFECT_KNIGHT
+// #define RGBLIGHT_EFFECT_SNAKE
+// #define RGBLIGHT_EFFECT_TWINKLE
 #define RGBLIGHT_EFFECT_RGB_TEST
 
 #define RGBLIGHT_RAINBOW_SWIRL_RANGE 16
