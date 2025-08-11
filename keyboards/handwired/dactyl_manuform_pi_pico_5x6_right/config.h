@@ -13,9 +13,10 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #define ENCODER_B_PINS { GP3, GP5 }
 #define ENCODER_RESOLUTION 4
 
+#define I2C_DRIVER I2CD1
 #define I2C1_SCL_PIN GP9
 #define I2C1_SDA_PIN GP8
-
+#define OLED_BRIGHTNESS 128
 
 #define WS2812_DI_PIN GP7
 #define RGBLIGHT_LED_COUNT 16

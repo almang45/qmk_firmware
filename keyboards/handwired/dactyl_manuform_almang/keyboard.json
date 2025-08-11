@@ -1,7 +1,10 @@
 {
-    "keyboard_name": "Dactyl Manuform 5x6 Pi Pico Custom",
-    "manufacturer": "Alfonsus Manggala",
+    "keyboard_name": "Dactyl Manuform Pi Pico Custom",
     "maintainer": "almang45",
+    "manufacturer": "coepoe.org",
+    "url": "https://browse.qmk.fm/#/",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
     "usb": {
         "vid": "0xFEED",
         "pid": "0x3536",
@@ -12,8 +15,6 @@
             "nkro": true
         }
     },
-    "processor": "RP2040",
-    "bootloader": "rp2040",
     "board": "GENERIC_RP_RP2040",
     "development_board": "pi_pico",
     "features": {

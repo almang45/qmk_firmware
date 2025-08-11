@@ -1,8 +1,5 @@
-# Minimal rules.mk for Dactyl Manuform Pi Pico
-# Most configuration moved to keyboard.json
-
-# Only include non-conflicting build rules here
-# All features are now defined in keyboard.json to avoid conflicts
+# Bootloader selection
+BOOTLOADER = rp2040
 
 # Optional: Custom build optimizations
 LTO_ENABLE = yes
