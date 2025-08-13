@@ -36,20 +36,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FN] = LAYOUT(
         KC_ESC,    _______,   _______,   _______,   _______,   KC_DEL,
         _______,   _______,   KC_UP,     UG_PREV,   UG_TOGG,   _______,
-        _______,   KC_LEFT,   KC_DOWN,   KC_RIGHT,  _______,   _______,
-        _______,   _______,   _______,   _______,   _______,   _______,
-        KC_SPC,    _______,   _______,   _______
+        _______,   KC_LEFT,   KC_DOWN,   KC_RIGHT,  _______,   MS_WHLU,
+        _______,   _______,   _______,   _______,   _______,   MS_WHLD,
+        KC_SPC,    _______,   MS_WHLL,   MS_WHLR
     )
 };
 
-#if defined(ENCODER_MAP_ENABLE)
+#ifdef ENCODER_MAP_ENABLE
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [_BASE] = { ENCODER_CCW_CW(MS_WHLU, MS_WHLD), ENCODER_CCW_CW(KC_VOLU, KC_VOLD) },
-    [_FN]   = { ENCODER_CCW_CW(MS_WHLL, MS_WHLR), ENCODER_CCW_CW(UG_SPDU, UG_SPDD) }
+    [_BASE] = { ENCODER_CCW_CW(KC_VOLU, KC_VOLD), ENCODER_CCW_CW(MS_WHLU, MS_WHLD) },
+    [_FN]   = { ENCODER_CCW_CW(UG_SPDU, UG_SPDD), ENCODER_CCW_CW(MS_WHLL, MS_WHLR) }
 };
 #endif
 
-#if defined(OLED_ENABLE)
+#ifdef OLED_ENABLE
 // oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 //     return OLED_ROTATION_180;
 // }

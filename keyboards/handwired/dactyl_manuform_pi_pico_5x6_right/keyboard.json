@@ -1,5 +1,5 @@
 {
-    "keyboard_name": "handwired/dactyl_manuform_pi_pico_custom",
+    "keyboard_name": "handwired/dactyl_manuform_pi_pico_5x6_right",
     "maintainer": "almang45",
     "manufacturer": "coepoe.org",
     "url": "https://browse.qmk.fm/#/",
@@ -10,7 +10,10 @@
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
-        "rgblight": true
+        "rgblight": true,
+        "encoder": true,
+        "oled": true,
+        "split": false
     },
     "diode_direction": "COL2ROW",
     "matrix_pins": {
