@@ -41,6 +41,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #define I2C1_SCL_PIN GP9
 #define I2C1_SDA_PIN GP8
 #define OLED_BRIGHTNESS 128
+#define OLED_FONT_H "skeeb_font.c"
 
 // RGB LED Configuration
 #define WS2812_DI_PIN GP7
